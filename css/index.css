@@ -45,10 +45,13 @@
   width: 45px;
   object-fit: contain;
 }
+.tooltip-item__label a {
+  display: inline-block;
+  text-decoration: none;
+}
 .tooltip-item__content {
   visibility: hidden;
   opacity: 0;
-  transform: rotateX(90deg);
   display: block;
   max-width: 220px;
   padding: 0;
@@ -57,14 +60,14 @@
   text-align: center;
   white-space: nowrap;
   border-radius: 4px;
-  color: rgba(0, 0, 0, 0.35);
-  background-color: rgba(0, 0, 0, 0.35);
+  color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .tooltip-item__content.drop {
   color: #ffffff;
   background-color: #ffffff;
-  -webkit-filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.35));
-  filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.35));
+  -webkit-filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.3));
 }
 .tooltip-item__content code {
   color: #f5222d;
@@ -151,4 +154,7 @@
   -ms-transition: all ease-in 0.25s;
   visibility: visible;
   opacity: 1;
+}
+.tooltip-item:hover .tooltip-item__content img {
+  transition-delay: 0.2s;
 }
