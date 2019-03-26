@@ -1,5 +1,10 @@
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
 .sponsor {
-  /* margin-top: 150px; */
+  margin-top: 135px;
   display: inline-block;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -70,6 +75,8 @@
   filter: drop-shadow(1px 1px 4px rgba(0, 0, 0, 0.3));
 }
 .tooltip-item__content code {
+  padding: 3px 5px;
+  border-radius: 2px;
   color: #f5222d;
   background-color: rgba(245, 34, 45, 0.15);
   font-weight: 500;

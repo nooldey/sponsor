@@ -3,8 +3,14 @@
 @drop-color: rgba(0, 0, 0, 0.30);
 @code-bg-color: #f5222d;
 
+body {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
 .sponsor {
-  // margin-top: 150px;
+  margin-top: 135px;
   display: inline-block;
   border: 1px solid @border-color;
   border-radius: 6px;
@@ -83,6 +89,8 @@
     }
 
     code {
+      padding: 3px 5px;
+      border-radius: 2px;
       color: @code-bg-color;
       background-color: rgba(@code-bg-color, 0.15);
       font-weight: 500;
