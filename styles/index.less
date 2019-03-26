@@ -1,52 +1,96 @@
-.sponsor-block {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  justify-content: space-around;
-  box-sizing: border-box;
-
-  p {
-    flex: 1;
-    margin: 5px;
-    display: inline-block;
-    vertical-align: middle;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-}
+@border-color: #ddd;
+@tooltip-background-color: rgba(255, 255, 255, 1);
+@drop-color: rgba(0, 0, 0, 0.35);
+@code-bg-color: #f5222d;
 
 .sponsor {
-  margin-top: 250px;
+  margin-top: 150px;
+  display: inline-block;
+  border: 1px solid @border-color;
+  border-radius: 6px;
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .tooltip-item {
   position: relative;
   display: inline-block;
-  margin-right: 8px;
+  height: 28px;
+  margin: 0;
+  padding: 3px 8px;
+  text-align: center;
   font-size: 14px;
+  box-sizing: border-box;
+
+  &:not(:last-child) {
+    border-right: 1px solid @border-color;
+  }
 
   &__label {
     display: inline-block;
     cursor: pointer;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+    opacity: 0.5;
+
+    &:hover {
+      -webkit-filter: grayscale(0);
+      filter: grayscale(0);
+      opacity: 1;
+    }
+
+    &::after {
+      content: "";
+      display: inline-block;
+      vertical-align: middle;
+      height: 100%;
+      width: 0;
+    }
+
+    img {
+      display: inline-block;
+      vertical-align: middle;
+      max-height: 16px;
+      height: auto;
+      width: 45px;
+      object-fit: contain;
+    }
   }
 
   &__content {
     visibility: hidden;
+    opacity: 0;
+    transform: rotateX(90deg);
     display: block;
     max-width: 220px;
-    padding: 3px;
+    padding: 0;
     position: absolute;
     z-index: 9;
     text-align: center;
     white-space: nowrap;
-    color: #fff;
     border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.35);
+    color: @drop-color;
+    background-color: @drop-color;
+
+    &.drop {
+      color: @tooltip-background-color;
+      background-color: @tooltip-background-color;
+      -webkit-filter: drop-shadow(1px 1px 4px @drop-color);
+      filter: drop-shadow(1px 1px 4px @drop-color);
+    }
+
+    code {
+      color: @code-bg-color;
+      background-color: rgba(@code-bg-color,0.15);
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    span:only-child {
+      display: inline-block;
+      min-width: 50px;
+      text-align: center;
+      color: #fff;
+    }
 
     &::after {
       content: "";
@@ -59,6 +103,7 @@
     }
 
     &.top {
+      padding: 3px;
       left: 50%;
       bottom: 150%;
       transform: translateX(-50%);
@@ -67,11 +112,12 @@
         top: 100%;
         left: 50%;
         margin-left: -5px;
-        border-color: rgba(0, 0, 0, 0.35) transparent transparent transparent;
+        border-color: currentColor transparent transparent transparent;
       }
     }
 
     &.bottom {
+      padding: 3px;
       left: 50%;
       top: 150%;
       transform: translateX(-50%);
@@ -80,11 +126,12 @@
         bottom: 100%;
         left: 50%;
         margin-left: -5px;
-        border-color: transparent transparent rgba(0, 0, 0, 0.35) transparent;
+        border-color: transparent transparent currentColor transparent;
       }
     }
 
     &.left {
+      padding: 3px 8px;
       right: 110%;
       top: 50%;
       transform: translateY(-50%);
@@ -93,11 +140,12 @@
         left: 100%;
         top: 50%;
         margin-top: -5px;
-        border-color: transparent transparent transparent rgba(0, 0, 0, 0.35);
+        border-color: transparent transparent transparent currentColor;
       }
     }
 
     &.right {
+      padding: 3px 8px;
       left: 110%;
       top: 50%;
       transform: translateY(-50%);
@@ -106,7 +154,7 @@
         right: 100%;
         top: 50%;
         margin-top: -5px;
-        border-color: transparent rgba(0, 0, 0, 0.35) transparent transparent;
+        border-color: transparent currentColor transparent transparent;
       }
     }
 
@@ -124,6 +172,10 @@
   }
 
   &:hover &__content {
+    transition: all ease-in 0.25s;
+    -webkit-transition: all ease-in 0.25s;
+    -ms-transition: all ease-in 0.25s;
     visibility: visible;
+    opacity: 1;
   }
 }
