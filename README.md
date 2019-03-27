@@ -6,7 +6,7 @@
 
 ## 二次开发
 
-+ 本项目已配置在webstorm下，编辑styles/index.less文件，webstorm可自动编译产出到css/index.css，依赖全局安装的less包，此外，无其他npm依赖要求。
++ VScode开发环境下，安装全局npm包`less`，以及vscode-plugin:`easy less`，安装完毕后，编辑less文件，将自动输出到css/目录下。
 
 + 无nodejs环境或不使用全局npm包，可直接编辑css/index.css文件，引入到iframe前确保icons、images、css文件夹保留以及index.html文件保留即可，其他文件可自行删减。
 
