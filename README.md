@@ -12,6 +12,8 @@
 
 ## 鸣谢
 
-本项目衍生自 https://github.com/Kaiyuan/donate-page
+本项目衍生自 https://github.com/Kaiyuan/donate-page；
+
 UI设计来源donate-page项目原设计；
+
 部分交互有所参照，代码组织为自行设计开发，相对原项目，本项目由纯html+css（less）开发完成，不引入jQuery，力求简洁效果和最少加载。
