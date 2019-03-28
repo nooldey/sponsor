@@ -12,7 +12,7 @@
 
 ## 鸣谢
 
-本项目衍生自 https://github.com/Kaiyuan/donate-page；
+本项目衍生自 https://github.com/Kaiyuan/donate-page
 
 UI设计来源donate-page项目原设计；
 
